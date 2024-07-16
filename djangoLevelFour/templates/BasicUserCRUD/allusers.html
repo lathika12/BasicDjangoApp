@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "BasicUserCRUD/basic.html" %}
+
+{% block basicbodyblock %}
+
+    <div class="card">
+        <div class="card-header">
+            Please Find details of All the users
+        </div>
+        <div class="card-body">
+
+            {% if usersls %}
+
+                
+
+                    <table class="table">
+
+                        <thead>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>About</th>
+                        </thead>
+
+                        <tbody>
+                        {% for user in usersls %}
+                        <tr>
+                            
+                                
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.last_name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td>{{ user.about }}</td>
+                            
+                            
+                        
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+
+                    </table>
+
+                
+
+            {% else %}
+
+                <p> There is potentially no details to display.</p>
+
+            {% endif %}
+
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
